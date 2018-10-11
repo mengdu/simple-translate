@@ -3,7 +3,7 @@ body {
   font-size: 15px;
   padding: 0;
   margin: 0;
-  min-width: 250px;
+  width: 250px;
 }
 a {
   color: #4285f4;
@@ -55,6 +55,9 @@ a {
 .form-control.block {
   display: block;
   width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 30px;
   box-sizing: border-box;
 }
 .form-control:focus {
@@ -104,17 +107,11 @@ a {
   text-align: center;
 }
 .header {
-  top: 0;
   color: #636363;
-  background: #F0F0F0;
   padding: 10px 10px;
-  position: fixed;
   width: 100%;
   z-index: 100;
   box-sizing: border-box;
-}
-.header img {
-  vertical-align: sub;
 }
 .footer {
   position: fixed;
@@ -129,7 +126,7 @@ a {
   background: #F0F0F0;
 }
 .footer .copyright {
-  padding-bottom: 5px;
+  padding: 5px;
 }
 .footer img {
   vertical-align: middle;
@@ -233,4 +230,22 @@ a {
   background: #FA5F21;
   transform: scale(0.85);
   display: inline-block;
+}
+
+.lang-translate {
+  padding: 10px 0;
+  text-align: center;
+}
+.lang-translate img {
+  vertical-align: 0px;
+  margin: 0 3px;
+}
+.lang-translate select {
+  width: 98px;
+}
+.translate-result {
+  margin-top: 10px;
+  background: #F5F5F5;
+  padding: 10px;
+  overflow: auto;
 }
