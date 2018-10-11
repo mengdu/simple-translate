@@ -1,0 +1,23 @@
+{
+  "name": "简单翻译",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "description": "基于百度翻译API的翻译扩展",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "48": "images/icon48.png"
+    },
+    "default_title": "简单翻译",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "management",
+    "file:///*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

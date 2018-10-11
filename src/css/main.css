@@ -1,0 +1,236 @@
+body {
+  color: #282C34;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+}
+a {
+  color: #4285f4;
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px
+}
+
+::-webkit-scrollbar,::-webkit-scrollbar-corner {
+  background: transparent
+}
+
+::-webkit-resizer {
+  background: transparent
+}
+
+::-webkit-scrollbar-thumb,::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background-clip: content-box;
+  border: 2px solid transparent
+}
+
+::-webkit-scrollbar-thumb,::-webkit-scrollbar-track {
+  background-color: rgba(33,37,43,.26)
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 20px
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5a6274;
+  border-width: 1px
+}
+
+.f-right {
+  float: right;
+}
+
+.form-control {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: solid 1px #dcdde0;
+  outline: none;
+  box-sizing: border-box;
+}
+.form-control.block {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-control:focus {
+  border-color: #6b97e0;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.28);
+}
+
+#root {
+  overflow: auto;
+  max-height: 400px;
+  box-sizing: border-box;
+}
+.app-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.app-list .item {
+  padding: 5px 15px;
+  filter: grayscale(0);
+  transition: fitter 0.5s ease;
+}
+.app-list .item:hover {
+  background: #F2F2F2;
+}
+
+.app-list .item .item-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.app-list .item .item-title {
+  display: inline-block;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.app-list .item.disabled {
+  filter: grayscale(1)
+}
+.void {
+  padding: 15px;
+  color: #929292;
+  text-align: center;
+}
+.header {
+  top: 0;
+  color: #636363;
+  background: #F0F0F0;
+  padding: 10px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+}
+.header img {
+  vertical-align: sub;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #636363;
+  font-family: 'Roboto',sans-serif;
+  font-size: 11px;
+  text-align: center;
+  line-height: 25px;
+  /* height: 40px; */
+  background: #F0F0F0;
+}
+.footer .copyright {
+  padding-bottom: 5px;
+}
+.footer img {
+  vertical-align: middle;
+}
+.footer .app-link {
+  line-height: 30px;
+  padding: 10px 0 0 0;
+}
+.footer .app-link a {
+  margin-right: 5px;
+}
+.footer .app-link img {
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
+.footer .version {
+  background-color: rgba(64,158,255,.1);
+  display: inline-block;
+  height: 20px;
+  padding: 0 5px;
+  line-height: 19px;
+  font-size: 11px;
+  color: #409eff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid rgba(64,158,255,.2);
+  white-space: nowrap;
+}
+
+/* switch */
+
+.switch {
+  display: inline-block;
+}
+.switch label {
+  cursor: pointer;
+}
+.switch .switch-input {
+  display: none;
+}
+.switch .switch-button {
+  width: 28px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 8px;
+  position: relative;
+  transition: background-color 80ms linear;
+  background: #999999;
+}
+.switch .switch-inner {
+  display: inline-block;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0px 0px 0px rgba(0, 0, 0, 0.11);
+  position: absolute;
+  transition: background-color 80ms ease, box-shadow 200ms linear, left 100ms linear;
+  width: 16px;
+  height: 16px;
+  top: -2px;
+  left: 0;
+}
+.switch .switch-inner:active {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0px 0px 11px rgba(0, 0, 0, 0.11);
+}
+.switch .switch-input:checked + .switch-button {
+  background: rgba(76, 140, 247, 0.59);
+}
+.switch .switch-input:checked + .switch-button .switch-inner {
+  background: #4285f4;
+  left: 12px;
+}
+
+/** btn **/
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  background: #2EB7F5;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 100ms linear;
+  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.11);
+}
+.btn:hover {
+  background: #37C1FA;
+}
+.btn:active {
+  opacity: 0.9;
+  box-shadow: 0 0px 0px 4px rgba(0, 0, 0, 0.11);
+}
+
+/** tag **/
+
+.tag {
+  border-radius: 10px;
+  font-size: 11px;
+  color: #fff;
+  padding: 0 5px;
+  background: #FA5F21;
+  transform: scale(0.85);
+  display: inline-block;
+}

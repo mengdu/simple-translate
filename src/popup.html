@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <title>popup</title>
+</head>
+<body>
+  <div style="height: 47px;"></div>
+  <div id="root">
+    <div class="header">
+        <input type="text" placeholder="快速查找" class="form-control block" v-model="query"/>
+    </div>
+    <div class="void" v-if="query && filterExtensions.length === 0">未匹配到扩展</div>
+    <ul class="app-list">
+      <li class="item"
+        v-for="(item, index) in filterExtensions"
+        :key="index"
+        :class="{disabled: !item.enabled}"
+        >
+        <img :src="item.icons[0].url" class="item-icon">
+        <span class="item-title" :title="item.name + '\n' + item.description">{{item.name}}</span>
+        <div class="f-right">
+          <button class="btn" v-if="item.isApp" @click="handleExec(index, item)">run</button>
+          <span class="tag" v-if="item.installType === 'development'">dev</span>
+          <div class="switch" :title="item.enabled ? '关闭' : '启用'">
+              <label>
+                <input type="checkbox" class="switch-input" v-model="item.enabled" @change="enabledChange(index, item)" />
+                <span class="switch-button">
+                  <span class="switch-inner"></span>
+                </span>
+              </label>
+            </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+  <div style="height: 70px;"></div>
+  <footer class="footer">
+    <div class="app-link">
+      <a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN" target="_blank" title="https://chrome.google.com/webstore/category/extensions?hl=zh-CN"><img src="images/chrome16.png" />应用店</a>
+      <!-- <a href="chrome://extensions" target="_blank" title="chrome://extensions"><img src="images/extension.png" />扩展中心</a> -->
+    </div>
+    <div class="copyright">
+      <span class="version">v1.0.0</span>
+      <span>make by <a href="https://github.com/mengdu" target="_blank" title="https://github.com/mengdu">@Lanyue</a></span>&nbsp;
+      <span><img src="images/code.png" alt="github"> <a href="https://github.com/mengdu/extension-manager" target="_blank" title="https://github.com/mengdu/extension-manager">Github</a></span>
+    </div>
+
+  </footer>
+  <script src="js/vue.min.js"></script>
+  <!-- <script src="js/vue.js"></script> -->
+  <script src="js/popup.js"></script>
+</body>
+</html>
