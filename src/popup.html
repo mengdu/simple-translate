@@ -11,22 +11,23 @@
 <body>
   <div id="root">
     <div class="header">
-      <textarea placeholder="输入内容..." class="form-control block" v-model="query.q"></textarea>
+      <textarea placeholder="输入文字" class="form-control block" v-model="query.q"></textarea>
       <div class="lang-translate">
         <select class="form-control" v-model="query.from">
-          <option value="q">自动识别</option>
-          <option value="q">中文</option>
+          <option :value="key" v-for="(val, key) in langs" :key="key">{{val}}</option>
         </select>
         <img src="images/right-arrow.png" class="translate-icon" />
         <select class="form-control" v-model="query.to">
-          <option value="q">自动识别</option>
-          <option value="q">中文</option>
+          <option :value="key" v-for="(val, key) in langs" :key="key">{{val}}</option>
         </select>
       </div>
       <div>
         <button class="m-button m-button-info m-button-block" @click="handleTranslate">翻译</button>
       </div>
-      <div class="translate-result">{{result}}</div>
+      <div class="translate-result">
+        <span v-if="!result.bool" class="text-danger">{{result.content}}</span>
+        <template v-else>{{result.content}}</template>
+      </div>
     </div>
   </div>
   <div style="height: 35px;"></div>
@@ -40,6 +41,8 @@
   </footer>
   <script src="js/vue.min.js"></script>
   <script src="js/md5.js"></script>
+  <script src="js/request.js"></script>
+  <script src="js/langs.js"></script>
   <script src="js/popup.js"></script>
 </body>
 </html>

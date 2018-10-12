@@ -16,6 +16,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
+    "*://api.fanyi.baidu.com/*",
     "management",
     "file:///*"
   ],
